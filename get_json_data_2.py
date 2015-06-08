@@ -1,10 +1,15 @@
 import json
 import urllib
 
-results = json.load(urllib.urlopen("https://www.kimonolabs.com/api/adgmajn2?apikey=L63EvSC1x5vG8iSbm9Jon3784mkDp1Or"))
+results = json.load(urllib.urlopen("http://opendata.epa.gov.tw/ws/Data/RainTenMin/?$orderby=PublishTime%20desc&$skip=0&$top=1000&format=json"))
 
 #parse_result  = json.loads(results)
 
-for i in range(0, 10, 1):
-    print results['results'] ['collection1'] [i] ['title']['text'] 
+#print len(results)
+
+for i in range(0, len(results), 1):
+	print results[i]['SiteId'] +  " "+ results[i]['Rainfall1hr'] + " "+results[i]['PublishTime']  
+
+	
+    #['results'] ['collection1'] [i] ['title']
 

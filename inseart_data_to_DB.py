@@ -2,18 +2,14 @@
 #!/usr/bin/python
 
 import MySQLdb
+import json
+import urllib
 
 # Open database connection
 db = MySQLdb.connect("140.138.77.104","BDSTeam08","BDSTeam08@2015","BDSTeam08_DB" )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
-
-Mac = 'apple'
-Mac1 = 'apple1'
-Mac2 = 'apple2'
-Mac3 = 'app3'
-
 
 
 sql =  "INSERT INTO pet_1001514(pet_name, \
