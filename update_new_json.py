@@ -8,20 +8,10 @@ import urllib
 # Open database connection
 db = MySQLdb.connect("140.138.77.104","BDSTeam08","BDSTeam08@2015","BDSTeam08_DB" )
 
-# prepare a cursor object using cursor() method
-
-
-
-# prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 
 results = json.load(urllib.urlopen("http://opendata.epa.gov.tw/ws/Data/RainTenMin/?$orderby=PublishTime%20desc&$skip=0&$top=1000&format=json"))
-# sql =  "INSERT INTO pet_1001514(pet_name, \
-#        pet_owner, pet_specise, pet_sex, pet_birth) \
-#        VALUES ('%s', '%s', '%s', '%s', '%s' )"  % \
-#         ( Mac ,  Mac1 ,  Mac2 ,  Mac3 ,  '0000-00-00' ) 
-#print results
 
 try : 
    #執行sql語句
@@ -31,8 +21,8 @@ try :
       UPDATE Railfall
       SET  Rainfall1hr=%s, PublishTime=%s
       WHERE SiteId=%s
-   """, (results[i]['Rainfall1hr'] ,  results[i]['PublishTime'] , results[i]['SiteId'] ))
-   db . commit () 
+   """, (results[i]['Rainfall1hr'] , "123" , results[i]['SiteId'] ))
+      db . commit () 
       #print i
 except : 
    #提交到數據庫執行
